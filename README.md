@@ -1,1 +1,1 @@
-# the-vue-handbook-exercises
+# Exercises from the Book ["The Vue Handbook"](https://flaviocopes.com/page/vue-handbook/)
