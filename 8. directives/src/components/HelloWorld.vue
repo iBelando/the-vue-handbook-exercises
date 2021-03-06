@@ -29,6 +29,36 @@
 
     <span>Fruit chosen: {{ selected }}</span>
 
+    <!-- Using Expressions -->
+    <span v-text="'Hi, ' + name + '!'"></span>
+    <a :href="'https://' + domain + path">{{ linkText }}</a>
+
+    <!-- Conditionals -->
+    <span v-if="shouldShowThis">Hey!</span>
+
+    <!-- Loops | Simple Array -->
+    <ul>
+      <li v-for="item in items">{{ item }}</li>
+    </ul>
+
+    <!-- Loops | Array of Objects -->
+    <div>
+      <!-- Usign interpolations -->
+      <ul>
+        <li v-for="todo in todos">{{ todo.title }}</li>
+      </ul>
+
+      <!-- Using v-text -->
+      <ul>
+        <li v-for="todo in todos" v-text="todo.title"></li>
+      </ul>
+    </div>
+
+    <!-- v-for can give you the index -->
+    <ul>
+      <li v-for="(todo, index) in todos"></li>
+    </ul>
+
   </div>
 </template>
 
@@ -37,7 +67,13 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      linkText: 'Test'
+      linkText: 'Test',
+      shouldShowThis: true,
+      items: ['car','bike','dog'],
+      todos: [
+        { id: 1, title: 'Do something' },
+        { id: 2, title: 'Do something else' }
+      ]
     }
   },
 }
